@@ -18,13 +18,13 @@ APPORTION_SCRIPT := ./apportion_house.py
 DATA_DIR := ./data
 RESULTS_DIR := ./results
 
-###
+#####
 
 .PHONY: all results
 
 all: results
 
-###
+#####
 
 RESULTS :=\
 	$(RESULTS_DIR)/$(YEAR)_435.csv \
@@ -33,12 +33,17 @@ RESULTS :=\
 	$(RESULTS_DIR)/$(YEAR)_435_with_dc_and_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_435_smallest.csv \
 	$(RESULTS_DIR)/$(YEAR)_smallest.csv \
+	$(RESULTS_DIR)/$(YEAR)_smallest_with_dc.csv \
+	$(RESULTS_DIR)/$(YEAR)_smallest_with_pr.csv \
+	$(RESULTS_DIR)/$(YEAR)_smallest_with_dc_and_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root_with_dc.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root_with_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root_with_dc_and_pr.csv
 
 results: $(RESULTS)
+
+###
 
 # Apportion according to current algorithm.
 $(RESULTS_DIR)/$(YEAR)_435.csv: FORCE
@@ -56,13 +61,31 @@ $(RESULTS_DIR)/$(YEAR)_435_with_pr.csv: FORCE
 $(RESULTS_DIR)/$(YEAR)_435_with_dc_and_pr.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 --include-dc --include-pr > $@
 
+###
+
 # Apportion with current seat limit using Wyoming Rule.
 $(RESULTS_DIR)/$(YEAR)_435_smallest.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 --use-smallest > $@
 
-# Apportion using Wymoing Rule without a seat limit.
+###
+
+# Apportion using Wyoming Rule without a seat limit.
 $(RESULTS_DIR)/$(YEAR)_smallest.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --use-smallest > $@
+
+# Apportion using Wyoming Rule without a seat limit and include DC.
+$(RESULTS_DIR)/$(YEAR)_smallest_with_dc.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --use-smallest --include-dc > $@
+
+# Apportion using Wyoming Rule without a seat limit and include PR.
+$(RESULTS_DIR)/$(YEAR)_smallest_with_pr.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --use-smallest --include-pr > $@
+
+# Apportion using Wyoming Rule without a seat limit and include DC and PR.
+$(RESULTS_DIR)/$(YEAR)_smallest_with_dc_and_pr.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --use-smallest --include-dc --include-pr > $@
+
+###
 
 # Apportion using Cube Root Rule.
 $(RESULTS_DIR)/$(YEAR)_cube_root.csv: FORCE
@@ -80,7 +103,7 @@ $(RESULTS_DIR)/$(YEAR)_cube_root_with_pr.csv: FORCE
 $(RESULTS_DIR)/$(YEAR)_cube_root_with_dc_and_pr.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --include-dc --include-pr > $@
 
-###
+#####
 
 .PHONY: FORCE
 FORCE:
