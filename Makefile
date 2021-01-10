@@ -28,6 +28,9 @@ all: results
 
 RESULTS :=\
 	$(RESULTS_DIR)/$(YEAR)_435.csv \
+	$(RESULTS_DIR)/$(YEAR)_435_with_dc.csv \
+	$(RESULTS_DIR)/$(YEAR)_435_with_pr.csv \
+	$(RESULTS_DIR)/$(YEAR)_435_with_dc_and_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_435_smallest.csv \
 	$(RESULTS_DIR)/$(YEAR)_smallest.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root.csv \
@@ -40,6 +43,18 @@ results: $(RESULTS)
 # Apportion according to current algorithm.
 $(RESULTS_DIR)/$(YEAR)_435.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 > $@
+
+# Apportion according to current algorithm and include DC.
+$(RESULTS_DIR)/$(YEAR)_435_with_dc.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 --include-dc > $@
+
+# Apportion according to current algorithm and include PR.
+$(RESULTS_DIR)/$(YEAR)_435_with_pr.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 --include-pr > $@
+
+# Apportion according to current algorithm and include DC and PR.
+$(RESULTS_DIR)/$(YEAR)_435_with_dc_and_pr.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 --include-dc --include-pr > $@
 
 # Apportion with current seat limit using Wyoming Rule.
 $(RESULTS_DIR)/$(YEAR)_435_smallest.csv: FORCE
