@@ -11,6 +11,8 @@ parser = argparse.ArgumentParser(description="Apportion the U.S. House of Repres
 
 parser.add_argument("DATASET", help="population dataset to use")
 
+parser.add_argument("--exclude-ak", action="store_true", help="exclude AK from apportionment")
+parser.add_argument("--exclude-hi", action="store_true", help="exclude HI from apportionment")
 parser.add_argument("--include-dc", action="store_true", help="include DC in apportionment")
 parser.add_argument("--include-pr", action="store_true", help="include PR in apportionment")
 parser.add_argument("--seats", default=None, type=int, help="use an explicit number of seats for apportionment")
@@ -65,10 +67,19 @@ with open(args.DATASET, newline="", encoding="utf-8") as population_data_file:
 	for population_data_row in population_data_reader:
 		population_count = int(population_data_row.get("RESIDENT_POPULATION", 0))
 		population_count += int(population_data_row.get("OVERSEAS_POPULATION", 0))
+		population_count -= int(population_data_row.get("POPULATION_NOT_TAXED", 0))
 
 		populations[population_data_row["AREA"]] = population_count
 
 #####
+
+if args.exclude_ak:
+	if "Alaska" in populations:
+		del populations["Alaska"]
+
+if args.exclude_hi:
+	if "Hawaii" in populations:
+		del populations["Hawaii"]
 
 if not args.include_dc:
 	if "District of Columbia" in populations:

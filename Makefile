@@ -1,6 +1,8 @@
 SHELL=/bin/bash
 
-ifeq ($(YEAR), 1990)
+ifeq ($(YEAR), 1910)
+	DATASET=data/1910_census.csv
+else ifeq ($(YEAR), 1990)
 	DATASET=data/1990_census.csv
 else ifeq ($(YEAR), 2000)
 	DATASET=data/2000_census.csv
@@ -28,15 +30,18 @@ all: results
 
 RESULTS :=\
 	$(RESULTS_DIR)/$(YEAR)_435.csv \
+	$(RESULTS_DIR)/$(YEAR)_435_without_ak_and_hi.csv \
 	$(RESULTS_DIR)/$(YEAR)_435_with_dc.csv \
 	$(RESULTS_DIR)/$(YEAR)_435_with_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_435_with_dc_and_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_435_smallest.csv \
 	$(RESULTS_DIR)/$(YEAR)_smallest.csv \
+	$(RESULTS_DIR)/$(YEAR)_smallest_without_ak_and_hi.csv \
 	$(RESULTS_DIR)/$(YEAR)_smallest_with_dc.csv \
 	$(RESULTS_DIR)/$(YEAR)_smallest_with_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_smallest_with_dc_and_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root.csv \
+	$(RESULTS_DIR)/$(YEAR)_cube_root_without_ak_and_hi.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root_with_dc.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root_with_pr.csv \
 	$(RESULTS_DIR)/$(YEAR)_cube_root_with_dc_and_pr.csv
@@ -48,6 +53,10 @@ results: $(RESULTS)
 # Apportion according to current algorithm.
 $(RESULTS_DIR)/$(YEAR)_435.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 > $@
+
+# Apportion according to current algorithm and exclude AK and HI.
+$(RESULTS_DIR)/$(YEAR)_435_without_ak_and_hi.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --seats=435 --exclude-ak --exclude-hi > $@
 
 # Apportion according to current algorithm and include DC.
 $(RESULTS_DIR)/$(YEAR)_435_with_dc.csv: FORCE
@@ -73,6 +82,10 @@ $(RESULTS_DIR)/$(YEAR)_435_smallest.csv: FORCE
 $(RESULTS_DIR)/$(YEAR)_smallest.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --use-smallest > $@
 
+# Apportion using Wyoming Rule without a seat limit and exclude AK and HI.
+$(RESULTS_DIR)/$(YEAR)_smallest_without_ak_and_hi.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --use-smallest --exclude-ak --exclude-hi > $@
+
 # Apportion using Wyoming Rule without a seat limit and include DC.
 $(RESULTS_DIR)/$(YEAR)_smallest_with_dc.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv --use-smallest --include-dc > $@
@@ -90,6 +103,10 @@ $(RESULTS_DIR)/$(YEAR)_smallest_with_dc_and_pr.csv: FORCE
 # Apportion using Cube Root Rule.
 $(RESULTS_DIR)/$(YEAR)_cube_root.csv: FORCE
 	$(APPORTION_SCRIPT) $(DATASET) --csv > $@
+
+# Apportion using Cube Root Rule and exclude AK and HI.
+$(RESULTS_DIR)/$(YEAR)_cube_root_without_ak_and_hi.csv: FORCE
+	$(APPORTION_SCRIPT) $(DATASET) --csv --exclude-ak --exclude-hi > $@
 
 # Apportion using Cube Root Rule and include DC.
 $(RESULTS_DIR)/$(YEAR)_cube_root_with_dc.csv: FORCE
