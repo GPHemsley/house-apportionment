@@ -2,6 +2,8 @@ SHELL=/bin/bash
 
 ifeq ($(YEAR), 1910)
 	DATASET=data/1910_census.csv
+else ifeq ($(YEAR), 1920)
+	DATASET=data/1920_census.csv
 else ifeq ($(YEAR), 1990)
 	DATASET=data/1990_census.csv
 else ifeq ($(YEAR), 2000)
