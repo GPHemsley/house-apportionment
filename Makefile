@@ -13,7 +13,7 @@ else ifeq ($(YEAR), 2000)
 else ifeq ($(YEAR), 2010)
 	DATASET=data/2010_census.csv
 else ifeq ($(YEAR), 2020)
-	DATASET=data/2020_estimate.csv
+	DATASET=data/2020_census.csv
 else ifeq ($(strip $(DATASET)),)
 	# Default to latest official census, unless DATASET is explicitly set too.
 	override YEAR=2010
