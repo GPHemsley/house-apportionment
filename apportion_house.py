@@ -16,6 +16,7 @@ parser.add_argument("--exclude-hi", action="store_true", help="exclude HI from a
 parser.add_argument("--include-dc", action="store_true", help="include DC in apportionment")
 parser.add_argument("--include-pr", action="store_true", help="include PR in apportionment")
 parser.add_argument("--seats", default=None, type=int, help="use an explicit number of seats for apportionment")
+parser.add_argument("--ensure-odd", action="store_true", help="ensure that the total number of seats is an odd number")
 parser.add_argument("--use-smallest", action="store_true", help="use the population of the smallest constituency as the population per seat")
 parser.add_argument("--csv", action="store_true", help="output as CSV file")
 
@@ -97,8 +98,17 @@ total_population = sum(populations.values())
 if args.use_smallest:
 	population_per_seat = min(populations.values())
 	seat_count = args.seats if args.seats is not None else math.ceil(total_population / population_per_seat)
+
+	if args.ensure_odd and seat_count % 2 == 0:
+		seat_count += 1
 else:
 	seat_count = args.seats if args.seats is not None else math.ceil(math.pow(total_population, 1/3))
+
+	# Cube root rule will always ensure odd.
+	if args.ensure_odd or args.seats is None:
+		if seat_count % 2 == 0:
+			seat_count += 1
+
 	population_per_seat = round(total_population / seat_count)
 
 final_population_per_seat = round(total_population / seat_count)

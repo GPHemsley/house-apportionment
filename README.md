@@ -3,7 +3,7 @@
 Allocate seats in the U.S. House of Representatives according to the following algorithms:
 * [Reapportionment Act of 1929](https://en.wikipedia.org/wiki/Reapportionment_Act_of_1929) – proportional allocation of 435 seats
 * [Wyoming Rule](https://en.wikipedia.org/wiki/Wyoming_Rule) – proportional allocation of a number of seats such that the ideal ratio of population per seat is equal to the population of the constituency with the smallest population
-* [cube root rule](https://en.wikipedia.org/wiki/Cube_root_rule) – proportional allocation of a number of seats equal to the smallest whole number greater than the principal cube root of the total population
+* [cube root rule](https://en.wikipedia.org/wiki/Cube_root_rule) – proportional allocation of a number of seats equal to the smallest odd number greater than the principal cube root of the total population
 
 ## Summary
 
@@ -30,8 +30,8 @@ Allocate seats in the U.S. House of Representatives according to the following a
 
 |                 |    1910 |    1920 |    1930 |    1990 |    2000 |    2010 |    2020 |
 | --------------: | ------: | ------: | ------: | ------: | ------: | ------: | ------: |
-|           Seats |     451 |     473 |     497 |     630 |     656 |     677 |     692 |
-| Population/Seat | 203,036 | 222,565 | 246,053 | 395,274 | 429,000 | 456,696 | 478,480 |
+|           Seats |     451 |     473 |     497 |     631 |     657 |     677 |     693 |
+| Population/Seat | 203,036 | 222,565 | 246,053 | 394,648 | 428,347 | 456,696 | 477,790 |
 
 ## Data Sources
 
