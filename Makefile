@@ -16,8 +16,8 @@ else ifeq ($(YEAR), 2020)
 	DATASET=data/2020_census.csv
 else ifeq ($(strip $(DATASET)),)
 	# Default to latest official census, unless DATASET is explicitly set too.
-	override YEAR=2010
-	DATASET=data/2010_census.csv
+	override YEAR=2020
+	DATASET=data/2020_census.csv
 endif
 
 APPORTION_SCRIPT := ./apportion_house.py
