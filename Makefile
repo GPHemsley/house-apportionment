@@ -6,6 +6,8 @@ else ifeq ($(YEAR), 1920)
 	DATASET=data/1920_census.csv
 else ifeq ($(YEAR), 1930)
 	DATASET=data/1930_census.csv
+else ifeq ($(YEAR), 1970)
+	DATASET=data/1970_census.csv
 else ifeq ($(YEAR), 1980)
 	DATASET=data/1980_census.csv
 else ifeq ($(YEAR), 1990)
