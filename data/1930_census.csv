@@ -1,52 +1,52 @@
 "AREA","RESIDENT_POPULATION","POPULATION_NOT_TAXED"
-"Alabama",2646248,0
-"Arizona",435573,0
-"Arkansas",1854482,0
-"California",5677251,0
-"Colorado",1035791,0
-"Connecticut",1606903,0
+"Alabama",2646248,6
+"Arizona",435573,46198
+"Arkansas",1854482,38
+"California",5677251,9010
+"Colorado",1035791,942
+"Connecticut",1606903,6
 "Delaware",238380,0
-"Florida",1468211,0
-"Georgia",2908506,0
-"Idaho",445032,0
-"Illinois",7630654,0
-"Indiana",3238503,0
-"Iowa",2470939,0
-"Kansas",1880999,0
-"Kentucky",2614589,0
+"Florida",1468211,20
+"Georgia",2908506,60
+"Idaho",445032,3496
+"Illinois",7630654,266
+"Indiana",3238503,23
+"Iowa",2470939,519
+"Kansas",1880999,1501
+"Kentucky",2614589,14
 "Louisiana",2101593,0
-"Maine",797423,0
-"Maryland",1631526,0
-"Massachusetts",4249614,0
-"Michigan",4842325,0
-"Minnesota",2563953,0
-"Mississippi",2009821,0
-"Missouri",3629367,0
-"Montana",537606,0
-"Nebraska",1377963,0
-"Nevada",91058,0
-"New Hampshire",465293,0
-"New Jersey",4041334,0
-"New Mexico",423317,0
-"New York",12588066,0
-"North Carolina",3170276,0
-"North Dakota",680845,0
-"Ohio",6646697,0
-"Oklahoma",2396040,0
-"Oregon",953786,0
-"Pennsylvania",9631350,0
+"Maine",797423,5
+"Maryland",1631526,4
+"Massachusetts",4249614,16
+"Michigan",4842325,273
+"Minnesota",2563953,12370
+"Mississippi",2009821,1667
+"Missouri",3629367,257
+"Montana",537606,12877
+"Nebraska",1377963,2840
+"Nevada",91058,4668
+"New Hampshire",465293,1
+"New Jersey",4041334,15
+"New Mexico",423317,27335
+"New York",12588066,99
+"North Carolina",3170276,3002
+"North Dakota",680845,7505
+"Ohio",6646697,64
+"Oklahoma",2396040,13818
+"Oregon",953786,3407
+"Pennsylvania",9631350,51
 "Rhode Island",687497,0
-"South Carolina",1738765,0
-"South Dakota",692849,0
-"Tennessee",2616556,0
-"Texas",5824715,0
-"Utah",507847,0
+"South Carolina",1738765,5
+"South Dakota",692849,19844
+"Tennessee",2616556,59
+"Texas",5824715,114
+"Utah",507847,2106
 "Vermont",359611,0
-"Virginia",2421851,0
-"Washington",1563396,0
-"West Virginia",1729205,0
-"Wisconsin",2939006,0
-"Wyoming",225565,0
+"Virginia",2421851,22
+"Washington",1563396,10973
+"West Virginia",1729205,6
+"Wisconsin",2939006,7285
+"Wyoming",225565,1935
 "Alaska",59278,0
 "Hawaii",368336,0
 "District of Columbia",486869,0
