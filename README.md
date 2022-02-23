@@ -36,7 +36,7 @@ Allocate seats in the U.S. House of Representatives according to the following a
 ## Data Sources
 
 * 1910 – https://www.census.gov/library/publications/1913/dec/vol-1-population.html
-* 1920 – https://www.census.gov/library/publications/1921/dec/vol-01-population.html
+* 1920 – https://www.census.gov/history/pdf/ApportionmentInformation-1920Census.pdf
 * 1930 – https://www.census.gov/history/pdf/ApportionmentInformation-1930Census.pdf
 * 1940 – https://www.census.gov/history/pdf/ApportionmentInformation-1940Census.pdf
 * 1950 – https://www.census.gov/history/pdf/ApportionmentInformation-1950Census.pdf

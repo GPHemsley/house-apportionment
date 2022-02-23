@@ -1,14 +1,14 @@
 "AREA","RESIDENT_POPULATION","POPULATION_NOT_TAXED"
 "Alabama",2348174,0
-"Arizona",334162,0
+"Arizona",334162,24408
 "Arkansas",1752204,0
-"California",3426861,0
-"Colorado",939629,0
+"California",3426861,830
+"Colorado",939629,468
 "Connecticut",1380631,0
 "Delaware",223003,0
 "Florida",968470,0
 "Georgia",2895832,0
-"Idaho",431866,0
+"Idaho",431866,1424
 "Illinois",6485280,0
 "Indiana",2930390,0
 "Iowa",2404021,0
@@ -19,34 +19,34 @@
 "Maryland",1449661,0
 "Massachusetts",3852356,0
 "Michigan",3668412,0
-"Minnesota",2387125,0
+"Minnesota",2387125,1469
 "Mississippi",1790618,0
 "Missouri",3404055,0
-"Montana",548889,0
+"Montana",548889,7378
 "Nebraska",1296372,0
-"Nevada",77407,0
+"Nevada",77407,1587
 "New Hampshire",443083,0
 "New Jersey",3155900,0
-"New Mexico",360350,0
-"New York",10385227,0
+"New Mexico",360350,6922
+"New York",10385227,4240
 "North Carolina",2559123,0
-"North Dakota",646872,0
+"North Dakota",646872,1727
 "Ohio",5759394,0
 "Oklahoma",2028283,0
 "Oregon",783389,0
 "Pennsylvania",8720017,0
 "Rhode Island",604397,0
 "South Carolina",1683724,0
-"South Dakota",636547,0
+"South Dakota",636547,5308
 "Tennessee",2337885,0
 "Texas",4663228,0
-"Utah",449396,0
+"Utah",449396,1008
 "Vermont",352428,0
 "Virginia",2309187,0
-"Washington",1356621,0
+"Washington",1356621,2025
 "West Virginia",1463701,0
-"Wisconsin",2632067,0
-"Wyoming",194402,0
+"Wisconsin",2632067,762
+"Wyoming",194402,915
 "Alaska",55036,0
 "Hawaii",255912,0
 "District of Columbia",437571,0
